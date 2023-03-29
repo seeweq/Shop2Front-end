@@ -1,0 +1,41 @@
+<div class="container-md"  style="margin-top: 70px;">
+  <div class="col-sm-8 offset -sm-2">
+    <div>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+  <div class="mb-3 row">
+    <label for="first-name" class="col-sm-2 col-form-label">First Name </label>
+    <div class="col-sm-10">
+      <input id="first-name" type="text" formControlName="firstname">
+
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <label for="last-name" class="col-sm-2 col-form-label">Last Name </label>
+    <div class="col-sm-10">
+      <input id="last-name" type="text" formControlName="lastname">
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <label for="last-name" class="col-sm-2 col-form-label">Email </label>
+    <div class="col-sm-10">
+      <input id="email" type="email" formControlName="email">
+    </div>
+  </div>
+
+<div class="mb-3 row">
+  <label for="last-name" class="col-sm-2 col-form-label">Password </label>
+  <div class="col-sm-10">
+    <input id="password" type="password" formControlName="password">
+  </div>
+</div>
+<div>
+  <button type="submit" [disabled]="!form.valid">Submit</button>
+</div>
+  <div>{{form.value | json}}</div>
+</form>
+</div>
+</div>
+</div>
