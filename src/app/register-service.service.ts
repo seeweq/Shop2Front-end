@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError} from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,11 +11,9 @@ export class RegisterServiceService {
   constructor(private http: HttpClient) { }
 
 
-
-
- RegisterTheUser(user:any):Observable<any> {
+ registerTheUser(user:any):Observable<any> {
    if (user != null) {
-      this.http.get(this.url);
+      return this.http.post(this.url,user);
    }else {
      console.log("can't add null user on database")
    }

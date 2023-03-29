@@ -23,29 +23,16 @@ export class RegisterUserComponent implements OnInit{
 
   });
 
-  // });
-  // get Firstname(): any {
-  //   return this.form.get('firstname')?.value;
-  // }
-  // get Lastname(): any {
-  //   return this.form.get('lastname')?.value;;
-  // }
-  //
-  // get Password():any {
-  //   return this.form.get('password')?.value;;
-  // }
-  // get Email(): any{
-  //   return this.form.get('email')?.value;;
-  // }
-
-
 
   // called when submit button is clicked
   onSubmit() {
-   const user= this.form.value;
-   console.log(user);
-    this.registerServiceService.RegisterTheUser(user).subscribe((response:any) =>{
-      console.log(response)
-    });
+    if (this.form.valid) {
+      const user = this.form.value;
+      this.registerServiceService.registerTheUser(user).subscribe((response: any) => {
+        console.log(response)
+      });
+    }else{
+      console.warn("invalid form data");
+    }
   }
 }
