@@ -15,6 +15,7 @@ export class RegisterServiceService {
    if (user != null) {
       return this.http.post(this.url,user);
 
+
    }else {
      console.log("can't add null user on database")
    }
