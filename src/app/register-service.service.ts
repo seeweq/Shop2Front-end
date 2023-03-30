@@ -14,9 +14,10 @@ export class RegisterServiceService {
  registerTheUser(user:any):Observable<any> {
    if (user != null) {
       return this.http.post(this.url,user);
+
    }else {
      console.log("can't add null user on database")
    }
-   return user;
+   return user
  }
 }
